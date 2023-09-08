@@ -4,7 +4,7 @@ import { connectPassport } from "./utils/Provider.js";
 import session from "express-session";
 import passport, { Passport } from "passport";
 import cookieParser from "cookie-parser";
-// import cors from "cors";
+import cors from "cors";
 import { MemoryStore } from "express-session";
 
 const app = express();
