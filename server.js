@@ -7,7 +7,7 @@ connectDB()
 
 
 app.get('/', (req, res, next) => {
-    res.send("<h1>Fine</h1>")
+    res.send("<h1>Server is woking fine!!!!</h1>")
 })
 
 app.listen(process.env.PORT, () => {
