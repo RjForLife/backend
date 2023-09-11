@@ -23,6 +23,7 @@ export const logout = (req, res, next) => {
             httpOnly:true,
             sameSite: "none"
         })
+        res.redirect("http://localhost:3000")
         res.status(200).json({
             success: true,
             message: "Logged Out"
