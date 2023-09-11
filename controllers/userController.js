@@ -17,12 +17,7 @@ export const logout = (req, res, next) => {
     req.session.destroy((err) => {
         if (err)  return next(err);
         
-        res.clearCookie('connect.sid', {
-            path:"/",
-            secure:true,
-            httpOnly:true,
-            sameSite: "none"
-        })
+        res.clearCookie('connect.sid')
         res.status(200).json({
             success: true,
             message: "Logged Out"
