@@ -32,7 +32,7 @@ app.use(
                 secure:true,
                 httpOnly:true,
                 sameSite: "none"
-        })
+        }
 );
 app.use(cookieParser());
 app.use(express.json());
