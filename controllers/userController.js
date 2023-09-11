@@ -22,6 +22,8 @@ export const logout = (req, res, next) => {
             secure:true,
             httpOnly:true,
             sameSite: "none"
+        }).json({
+            message:"cookie cleared"
         })
         res.status(200).json({
             success: true,
