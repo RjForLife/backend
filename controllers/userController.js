@@ -27,7 +27,6 @@ export const logout = (req, res, next) => {
             success: true,
             message: "Logged Out"
         });
-        res.redirect("http://localhost:3000")
 
     })
 }
