@@ -22,11 +22,16 @@ export const logout = (req, res, next) => {
             secure:true,
             httpOnly:true,
             sameSite: "none"
-        });
-        res.status(200).json({
-            success: true,
-            message: "Logged Out"
-        });
+        },(err)=>{
+            if(err){
+                console.error('Error clearing cookie:', err);
+                return next(err);
+            };
+            res.status(200).json({
+                success: true,
+                message: "Logged Out"
+            });
+         });
     })
 }
 
