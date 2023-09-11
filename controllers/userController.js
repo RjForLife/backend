@@ -22,13 +22,14 @@ export const logout = (req, res, next) => {
         console.log("session destroyed")
         
         res.clearCookie('connect.sid',{
-            domain: 'backend-phi-virid.vercel.app', // Match the domain of the cookie
+            domain: '.backend-phi-virid.vercel.app', // Match the domain of the cookie
             secure: true, // Ensure the other attributes match the cookie
             httpOnly: true,
             sameSite: 'none',
             path: '/'
         })
         console.log("cookie cleared")
+        
         
         res.status(200).json({
             success: true,
