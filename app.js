@@ -25,11 +25,12 @@ app.use(
             secret: "session-secret",
             resave: false,
             saveUninitialized: false,
-            store: new MemoryStore({
-            checkPeriod: 86400000 // prune expired entries every 24h
-            }),
             cookie: {
-                maxAge: 86400000,
+                domain: 'backend-phi-virid.vercel.app', // Match the domain of the cookie
+                secure: true, // Ensure the other attributes match the cookie
+                httpOnly: true,
+                sameSite: 'none',
+                path: '/'
                 }
         })
 );
