@@ -19,8 +19,11 @@ export const logout = (req, res, next) => {
             console.error('Error destroying session:', err);
             return next(err);
         }
+        console.log("session destroyed")
         
         res.clearCookie('connect.sid')
+        console.log("cookie cleared")
+        
         res.status(200).json({
             success: true,
             message: "Logged Out"
