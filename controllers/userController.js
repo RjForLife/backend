@@ -18,6 +18,7 @@ export const logout = (req, res, next) => {
         if (err) return next(err);
 
         res.clearCookie('connect.sid', {
+            path:"/",
             secure:true,
             httpOnly:true,
             sameSite: "none"
