@@ -15,7 +15,10 @@ export const myProfile = (req, res, next) => {
 
 export const logout = (req, res, next) => {
     req.session.destroy((err) => {
-        if (err) return next(err);
+        if (err) {
+            console.error('Error clearing cookie:', err);
+            return next(err);
+        }
 
         res.clearCookie('connect.sid', {
             path:"/",
