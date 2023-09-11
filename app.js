@@ -21,11 +21,8 @@ dotenv.config(
 app.use(
     session(
         {
-            cookie: { maxAge: 86400000 },
+            
             secret: "session-secret",
-            store: new MemoryStore({
-                checkPeriod: 86400000 // prune expired entries every 24h
-              }),
             resave: false,
             saveUninitialized: false,
             cookie: {
