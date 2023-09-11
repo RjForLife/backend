@@ -26,7 +26,7 @@ app.use(
             resave: false,
             saveUninitialized: false,
             cookie: {
-                domain: 'backend-phi-virid.vercel.app', // Match the domain of the cookie
+                domain: '.backend-phi-virid.vercel.app', // Match the domain of the cookie
                 secure: true, // Ensure the other attributes match the cookie
                 httpOnly: true,
                 sameSite: 'none',
