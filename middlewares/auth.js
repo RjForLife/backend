@@ -3,14 +3,20 @@ import ErrorHandler from "../utils/ErrorHandler.js";
 
 
 export const isAuthenticated = (req,res,next) =>{
-    const token = req.cookies['connect.sid'];
-    if(!token){
+    // const token = req.cookies['connect.sid'];
+    // if(!token){
        
-       return next(new ErrorHandler("Not Logged in",401))
+    //    return next(new ErrorHandler("Not Logged in",401))
     
-    }
+    // }
+    if (req.user === undefined) {
+    // User is not logged in
+    return next(new ErrorHandler("Not Logged in", 401));
+  }
     next()
 }
+
+
 
 export const adminAuth = (req,res,next)=>{
     
