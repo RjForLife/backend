@@ -1,5 +1,21 @@
 import mongoose from "mongoose";
 
+
+const itemSchema = new mongoose.Schema({
+  title: {
+    type: String,
+    required: true,
+  },
+  qty: {
+    type: Number,
+    required: true,
+  },
+  price: {
+    type: Number,
+    required: true,
+  },
+});
+
 const schema = new mongoose.Schema({
     shipping_Info :{
         hNo:{
@@ -27,38 +43,7 @@ const schema = new mongoose.Schema({
             required:true
         }
     },
-    order_Items:{
-        burgerWithCoke:{
-            price:{
-                type:Number,
-                required:true
-            },
-            quantity:{
-                type:Number,
-                required:true
-            },
-        },
-        vegPizza:{
-            price:{
-                type:Number,
-                required:true
-            },
-            quantity:{
-                type:Number,
-                required:true
-            },
-        },
-        frenchFries:{
-            price:{
-                type:Number,
-                required:true
-            },
-            quantity:{
-                type:Number,
-                required:true
-            },
-        },
-    },
+    orderItems: [itemSchema],
     user:{
         type:mongoose.Schema.ObjectId,
         ref: "User",
