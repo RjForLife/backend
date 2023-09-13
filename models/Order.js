@@ -20,26 +20,24 @@ const schema = new mongoose.Schema({
     shipping_Info :{
         hNo:{
             type:String,
-            required:true
         },
         city:{
             type:String,
-            required:true
         },
         state:{
             type:String,
         },
         country:{
             type:String,
-            required:true
+           
         },
         pincode:{
             type:Number,
-            required:true
+            
         },
         phoneNo:{
             type:Number,
-            required:true
+           
         }
     },
     orderItems: [itemSchema],
