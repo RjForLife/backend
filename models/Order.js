@@ -1,20 +1,20 @@
 import mongoose from "mongoose";
 
 
-const itemSchema = new mongoose.Schema({
-  title: {
-    type: String,
-    required: true,
-  },
-  qty: {
-    type: Number,
-    required: true,
-  },
-  price: {
-    type: Number,
-    required: true,
-  },
-});
+// const itemSchema = new mongoose.Schema({
+//   title: {
+//     type: String,
+//     required: true,
+//   },
+//   qty: {
+//     type: Number,
+//     required: true,
+//   },
+//   price: {
+//     type: Number,
+//     required: true,
+//   },
+// });
 
 const schema = new mongoose.Schema({
     shipping_Info :{
@@ -40,7 +40,20 @@ const schema = new mongoose.Schema({
            
         }
     },
-    orderItems: [itemSchema],
+    orderItems: {
+      title:{
+        type:String,
+        required:true,
+      },
+      qty:{
+        type:Number,
+        required:true,
+      },
+      price:{
+        type:Number,
+        required:true,
+      }
+    },
     user:{
         type:mongoose.Schema.ObjectId,
         ref: "User",
