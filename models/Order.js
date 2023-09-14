@@ -40,19 +40,26 @@ const schema = new mongoose.Schema({
            
         }
     },
-    orderItems:{
-      title:{
-         qty:{
-        type:Number,
-        required:true,
-           },
-      price:{
-        type:Number,
-        required:true,
-          }
+     orderItems: [
+    {
+      id: {
+        type: Number, 
+        required: true,
       },
-     
+      title: {
+        type: String,
+        required: true,
+      },
+      qty: {
+        type: Number,
+        required: true,
+      },
+      price: {
+        type: Number,
+        required: true,
+      },
     },
+  ],
     user:{
         type:mongoose.Schema.ObjectId,
         ref: "User",
