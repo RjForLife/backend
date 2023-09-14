@@ -42,17 +42,16 @@ const schema = new mongoose.Schema({
     },
     orderItems:{
       title:{
-        type:String,
-        required:true,
-      },
-      qty:{
+         qty:{
         type:Number,
         required:true,
-      },
+           },
       price:{
         type:Number,
         required:true,
-      }
+          }
+      },
+     
     },
     user:{
         type:mongoose.Schema.ObjectId,
