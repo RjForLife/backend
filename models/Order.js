@@ -40,7 +40,7 @@ const schema = new mongoose.Schema({
            
         }
     },
-    orderItems: {
+    orderItems:[ {
       title:{
         type:String,
         required:true,
@@ -53,7 +53,7 @@ const schema = new mongoose.Schema({
         type:Number,
         required:true,
       }
-    },
+    }],
     user:{
         type:mongoose.Schema.ObjectId,
         ref: "User",
