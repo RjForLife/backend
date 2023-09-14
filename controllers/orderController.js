@@ -9,7 +9,7 @@ export const placeOrder = catchAsyncError(
     async (req, res, next) => {
         const {
             shipping_Info,
-            order_Items,
+            orderItems,
             payment_Method,
             items_Price,
             shipping_Charges,
@@ -20,7 +20,7 @@ export const placeOrder = catchAsyncError(
 
         const orderOptions = {
             shipping_Info,
-            order_Items,
+            orderItems,
             payment_Method,
             items_Price,
             shipping_Charges,
