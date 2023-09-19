@@ -12,7 +12,7 @@ router.post("/createorder",isAuthenticated,placeOrder);
 
 router.get("/myorders",isAuthenticated, getMyOrders);
 
-router.get("/order/:id",isAuthenticated,getOrderDetails)
+router.get("/order/:id",getOrderDetails)
 
 
 // admin auth middleware - if user's role is not admin he cant access admin routes
